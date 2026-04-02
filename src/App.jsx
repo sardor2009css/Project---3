@@ -1,9 +1,10 @@
 import React from 'react'
+import Muradov from './components/Muradov'
 
 const App = () => {
   return (
     <div>
-      <h1 className='text-red-500'>test</h1>
+      <Muradov/>
     </div>
   )
 }
