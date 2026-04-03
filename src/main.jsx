@@ -2,9 +2,6 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import * as ReactDOM from "react-dom/client";
-
-
 import {
   createBrowserRouter,
   RouterProvider,
@@ -14,7 +11,7 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <App />,
   },
 ]);
 
