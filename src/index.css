@@ -1,2 +1,111 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@theme {
+  --color-dark-950: #040404;
+  --color-dark-900: #080808;
+  --color-dark-800: #101010;
+  --color-dark-700: #171717;
+  --color-dark-600: #232323;
+
+  --color-gold-300: #f2c56d;
+  --color-gold-400: #de9b37;
+  --color-gold-500: #c9821f;
+  --color-gold-600: #8a5312;
+
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-sans: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  background:
+    radial-gradient(circle at top, rgba(201, 130, 31, 0.18), transparent 24%),
+    linear-gradient(180deg, #0b0b0b 0%, #060606 100%);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top, rgba(201, 130, 31, 0.14), transparent 18%),
+    linear-gradient(180deg, #0b0b0b 0%, #050505 100%);
+  color: #f5f5f5;
+  font-family: var(--font-body);
+}
+
+a,
+button,
+input,
+select {
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+button {
+  cursor: pointer;
+}
+
+select option {
+  background: #111111;
+  color: #e5e5e5;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.gold-gradient {
+  background: linear-gradient(180deg, #f0c56f 0%, #e0a343 45%, #b96f19 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gold-border {
+  border: 1px solid rgba(201, 130, 31, 0.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 215, 145, 0.05),
+    0 12px 28px rgba(0, 0, 0, 0.32);
+}
+
+.card-hover {
+  transform: translateY(0);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 215, 145, 0.06),
+    0 18px 36px rgba(0, 0, 0, 0.44);
+}
+
+.star-filled {
+  color: #d9902f;
+}
+
+.star-empty {
+  color: rgba(217, 144, 47, 0.2);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #7a4c12 0%, #c9821f 100%);
+  border-radius: 999px;
+}

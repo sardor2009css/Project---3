@@ -38,11 +38,11 @@ export default function App() {
             ))}
           </nav>
 
-          <div className="flex w-10 items-center gap-4 text-sm">
+          <div className="flex items-center gap-4 text-sm">
             <span>🔍</span>
             <span>👤</span>
             <span>❤</span>
-            <div className="h-10 w-25 rounded-full border border-amber-300 px-3 py-1 text-center">
+            <div className="rounded-full border border-amber-300 px-3 py-1 text-center">
               🛒 {cartCount}
             </div>
           </div>
