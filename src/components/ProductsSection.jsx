@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ChevronDown, ChevronLeft, ChevronRight, SlidersHorizontal } from 'lucide-react'
 import ProductCard from './ProductCard'
+import useProducts from '../hooks/useProducts'
 
 const ITEMS_PER_PAGE = 12
 
@@ -20,10 +21,15 @@ function FilterSelect({ label, options, value, onChange }) {
   )
 }
 
-export default function ProductsSection({ products, searchQuery }) {
+export default function ProductsSection({ searchQuery }) {
+  const { products, isLoading } = useProducts()
   const [page, setPage] = useState(1)
   const [collection, setCollection] = useState('')
   const [sortBy, setSortBy] = useState('')
+
+  useEffect(() => {
+    setPage(1)
+  }, [searchQuery])
 
   const collections = [...new Set(products.map(product => product.collection))].filter(Boolean)
 
@@ -128,8 +134,12 @@ export default function ProductsSection({ products, searchQuery }) {
           ? paginated.map(product => <ProductCard key={product.id} product={product} />)
           : (
             <div className="col-span-full text-center py-20">
-              <p className="font-display text-2xl text-gray-600 mb-2">No fragrances found</p>
-              <p className="font-body text-gray-500">Try adjusting your filters</p>
+              <p className="font-display text-2xl text-gray-600 mb-2">
+                {isLoading ? 'Loading fragrances...' : 'No fragrances found'}
+              </p>
+              <p className="font-body text-gray-500">
+                {isLoading ? 'Please wait while products load' : 'Try adjusting your filters'}
+              </p>
             </div>
           )}
       </div>

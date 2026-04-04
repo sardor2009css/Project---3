@@ -1,7 +1,9 @@
 import { useCart } from '../useCart'
+import useProducts from '../hooks/useProducts'
 
-export default function SpecialOffers({ products }) {
+export default function SpecialOffers() {
   const { addToCart } = useCart()
+  const { products } = useProducts()
   const offers = products.filter(p => p.discount).slice(0, 2)
 
   if (offers.length === 0) return null

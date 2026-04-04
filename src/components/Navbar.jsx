@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { Search, User, Heart, ShoppingBag, Menu, X } from 'lucide-react'
 import { useCart } from '../useCart'
 
@@ -19,20 +20,20 @@ export default function Navbar({ onSearchChange, searchQuery }) {
       <header className={`fixed top-0 left-0 right-0 z-50 border-b border-gold-500/10 transition-all duration-500 ${scrolled ? 'bg-dark-900/95 backdrop-blur-md shadow-lg shadow-black/50' : 'bg-dark-900/88 backdrop-blur-sm'}`}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="font-display text-xl md:text-2xl font-bold gold-gradient flex-shrink-0">
+          <Link to="/" className="font-display text-xl md:text-2xl font-bold gold-gradient flex-shrink-0">
             Local Face
-          </a>
+          </Link>
 
           <nav className="hidden md:flex items-center gap-7">
-            <a href="#" className="font-sans text-xs tracking-[0.15em] uppercase text-gray-300 hover:text-gold-500 transition-colors duration-300">
+            <Link to="/" className="font-sans text-xs tracking-[0.15em] uppercase text-gray-300 hover:text-gold-500 transition-colors duration-300">
               Home
-            </a>
-            <a href="#" className="font-sans text-xs tracking-[0.15em] uppercase text-gray-300 hover:text-gold-500 transition-colors duration-300">
+            </Link>
+            <Link to="/shop" className="font-sans text-xs tracking-[0.15em] uppercase text-gray-300 hover:text-gold-500 transition-colors duration-300">
               Shop
-            </a>
-            <a href="#" className="font-sans text-xs tracking-[0.15em] uppercase text-gray-300 hover:text-gold-500 transition-colors duration-300">
+            </Link>
+            <Link to="/about-us" className="font-sans text-xs tracking-[0.15em] uppercase text-gray-300 hover:text-gold-500 transition-colors duration-300">
               About us
-            </a>
+            </Link>
             <a href="#" className="font-sans text-xs tracking-[0.15em] uppercase text-gray-300 hover:text-gold-500 transition-colors duration-300">
               Services
             </a>
@@ -84,18 +85,18 @@ export default function Navbar({ onSearchChange, searchQuery }) {
 
         {menuOpen && (
           <div className="md:hidden bg-dark-800 border-t border-gold-500/20">
-            <a href="#" onClick={() => setMenuOpen(false)}
+            <Link to="/" onClick={() => setMenuOpen(false)}
               className="block px-6 py-3 font-sans text-xs tracking-[0.15em] uppercase text-gray-300 hover:text-gold-500 hover:bg-dark-700 transition-all">
               Home
-            </a>
-            <a href="#" onClick={() => setMenuOpen(false)}
+            </Link>
+            <Link to="/shop" onClick={() => setMenuOpen(false)}
               className="block px-6 py-3 font-sans text-xs tracking-[0.15em] uppercase text-gray-300 hover:text-gold-500 hover:bg-dark-700 transition-all">
               Shop
-            </a>
-            <a href="#" onClick={() => setMenuOpen(false)}
+            </Link>
+            <Link to="/about-us" onClick={() => setMenuOpen(false)}
               className="block px-6 py-3 font-sans text-xs tracking-[0.15em] uppercase text-gray-300 hover:text-gold-500 hover:bg-dark-700 transition-all">
               About us
-            </a>
+            </Link>
             <a href="#" onClick={() => setMenuOpen(false)}
               className="block px-6 py-3 font-sans text-xs tracking-[0.15em] uppercase text-gray-300 hover:text-gold-500 hover:bg-dark-700 transition-all">
               Services

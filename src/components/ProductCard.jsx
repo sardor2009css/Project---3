@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { ShoppingBag, Star } from 'lucide-react'
 import { useCart } from '../useCart'
 
@@ -53,12 +54,12 @@ export default function ProductCard({ product }) {
             <ShoppingBag size={14} />
             {product.in_stock ? 'Add to Cart' : 'Unavailable'}
           </button>
-          <button
-            type="button"
+          <Link
+            to={`/product/${product.slug || product.id}`}
             className="px-6 py-3 border border-gold-500/40 text-gold-400 font-sans text-xs tracking-[0.15em] uppercase font-semibold transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 hover:bg-gold-500/10"
           >
             More Info
-          </button>
+          </Link>
         </div>
       </div>
 
